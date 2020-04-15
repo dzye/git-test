@@ -63,3 +63,26 @@ git branch -m dev1 dev2
 2. 删除远程待修改的分支名
 3. push 本地的新分支名到远程
 
+### 开发提交
+
+## add 文件
+
+```
+git add .
+```
+
+.所有更改 可换成指定文件名
+
+## commit 信息
+
+```
+git commit -m 'git test'
+[dev1 3275e8a] git test
+ 1 file changed, 65 insertions(+), 1 deletion(-)
+ rewrite README.md (100%)
+```
+## 合并到本地master分支
+dev1分支开发完成切换master分支
+```
+git checkout master
+```
