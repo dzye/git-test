@@ -81,8 +81,54 @@ git commit -m 'git test'
  1 file changed, 65 insertions(+), 1 deletion(-)
  rewrite README.md (100%)
 ```
-## 合并到本地master分支
-dev1分支开发完成切换master分支
+
+## 合并到本地 master 分支
+
+dev1 分支开发完成切换 master 分支
+
 ```
 git checkout master
+```
+
+进行本地分支 dev1 合并：
+
+```
+git merge dev1
+Updating 82951ea..444bb8e
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+```
+
+Fast-forward 信息，“快进模式”合并，这种模式下，删除分支后，会丢掉分支信息，可以用 –no-ff 方式进行 merge ：
+
+```
+git merge --no-ff -m "merge with no-ff" dev1
+```
+
+如果分支很多，这个分支历史可能就会变得很复杂了，可以使用 rebase，提交的历史会保持线性：
+
+```
+git rebase dev1
+```
+
+也是进行本地分支 dev1 合并
+
+### 删除本地分支
+
+```
+git branch -d dev1
+```
+
+这是删除，如果没有完成合并会有提示，以下是强删：
+
+```
+git branch -D dev1
+Deleted branch dev1 (was 2c81027).
+```
+
+### 创建远程分支
+
+```
+git push origin master:dev
 ```
