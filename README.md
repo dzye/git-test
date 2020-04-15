@@ -1,6 +1,6 @@
-###  查看分支
+## 查看分支
 
-## 查看本地分支
+### 查看本地分支
 
 ```
 git branch
@@ -9,7 +9,7 @@ git branch
 
 master 分支前的 \* 字符，它表示当前所在的分支。
 
-## 查看远程所有分支
+### 查看远程所有分支
 
 ```
 git branch -r
@@ -17,7 +17,7 @@ origin/HEAD -> origin/master
 origin/master
 ```
 
-## 列出本地分支和远程分支
+### 列出本地分支和远程分支
 
 ```
 git branch -a
@@ -26,9 +26,9 @@ git branch -a
   remotes/origin/master
 ```
 
-###  创建本地 dev1 分支
+## 创建本地 dev1 分支
 
-## 直接创建本地分支
+### 直接创建本地分支
 
 ```
 git checkout -b dev1
@@ -42,20 +42,20 @@ git branch dev1
 git checkout dev1
 ```
 
-## 从远程分支 dev(远程有该分支)创建本地分支
+### 从远程分支 dev(远程有该分支)创建本地分支
 
 ```
 git checkout -b dev1 origin/dev
 Switched to a new branch 'dev1'
 ```
 
-###  修改本地分支名字
+## 修改本地分支名字
 
 ```
 git branch -m dev1 dev2
 ```
 
-###  修改远程分支名字
+## 修改远程分支名字
 
 不能直接修改，思路：
 
@@ -63,9 +63,9 @@ git branch -m dev1 dev2
 2. 删除远程待修改的分支名
 3. push 本地的新分支名到远程
 
-## 开发提交
+### 开发提交
 
-###  add 文件
+## add 文件
 
 ```
 git add .
@@ -73,7 +73,7 @@ git add .
 
 .所有更改 可换成指定文件名
 
-###  commit 信息
+## commit 信息
 
 ```
 git commit -m 'git test'
@@ -82,7 +82,7 @@ git commit -m 'git test'
  rewrite README.md (100%)
 ```
 
-###  合并到本地 master 分支
+## 合并到本地 master 分支
 
 dev1 分支开发完成切换 master 分支
 
@@ -114,7 +114,7 @@ git rebase dev1
 
 也是进行本地分支 dev1 合并
 
-## 删除本地分支
+### 删除本地分支
 
 ```
 git branch -d dev1
@@ -127,7 +127,7 @@ git branch -D dev1
 Deleted branch dev1 (was 2c81027).
 ```
 
-## 创建远程分支
+### 创建远程分支
 
 ```
 git push origin master:dev
