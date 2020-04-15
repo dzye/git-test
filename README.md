@@ -129,6 +129,52 @@ Deleted branch dev1 (was 2c81027).
 
 ### 创建远程分支
 
+直接提交
+
 ```
 git push origin master:dev
+```
+
+这里冒号可以提交到指定分支，上面命令，把提交本地 master 分支到远程的 dev 分支，远程没有 dev 这个分支，会创建。
+
+```
+git push origin master
+```
+
+这是本地 master 提交到远程主分支 master，相当于
+
+```
+git push origin master:master
+```
+
+### 跟踪远程分支
+
+从远程分支 checkout 出来的本地分支，称为 跟踪分支 (tracking branch)。跟踪分支是一种和某个远程分支有直接联系的本地分支。在跟踪分支里输入 git pull/push，Git 会自行推断应该向哪个服务器的哪个分支更新/推送数据。
+
+```
+git branch -u origin/dev master
+Branch 'master' set up to track remote branch 'dev' from 'origin'.
+```
+
+或者：
+
+```
+git branch --set-upstream-to origin/dev master
+Branch master set up to track remote branch dev from origin.
+```
+
+查看所有分支追踪关系
+
+```
+git branch -vv
+* dev    0c5ab01 [origin/dev] test
+  master 0c5ab01 [origin/master: ahead 5] test
+```
+
+### 合并远程分支
+
+指定本地分支 master 追踪远程分支 dev
+
+```
+git branch -u origin/dev master
 ```
