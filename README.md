@@ -178,4 +178,16 @@ git branch -vv
 ```
 git branch -u origin/dev master
 ```
-dev2 修改并合并至master
+
+创建本地分支 dev2 并拉取 master 分支内容
+
+```
+git checkout -b dev2
+git pull origin master
+```
+
+dev2 修改并合并至 master
+
+```
+git push origin dev2 master
+```
