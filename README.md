@@ -178,4 +178,12 @@ git branch -vv
 ```
 git branch -u origin/dev master
 ```
-dev版本
+
+<!-- dev 推送内容 -->
+
+master 修改的内容合并至 dev 并删除 dev2 分支
+
+```
+git checkout dev
+git pull origin master
+```
